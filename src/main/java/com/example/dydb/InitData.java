@@ -4,6 +4,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDateTime;
+
 @Configuration
 public class InitData {
 
@@ -14,8 +16,7 @@ public class InitData {
             for(long i=100; i<=110; i++) {
                 MyClass data = MyClass.builder()
                         .id(i)
-                        .name("hello" + i)
-                        .password("hello" + i)
+                        .createDate(LocalDateTime.now())
                         .build();
                 dynamoDBService.putItem("hello", data);
             }

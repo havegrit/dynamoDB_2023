@@ -4,6 +4,8 @@ import lombok.*;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
+import java.time.LocalDateTime;
+
 @DynamoDbBean
 @Getter
 @Setter
@@ -13,8 +15,7 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbParti
 public class MyClass {
 
     private Long id;
-    private String name;
-    private String password;
+    private LocalDateTime createDate;
 
     @DynamoDbPartitionKey
     public Long getId() {
