@@ -1,4 +1,4 @@
-package com.example.dydb;
+package com.ll.dydb;
 
 import lombok.*;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
@@ -14,11 +14,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class MyClass {
 
-    private Long id;
+    private String id;
     private LocalDateTime createDate;
 
     @DynamoDbPartitionKey
-    public Long getId() {
+    public String getId() {
         return id;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.dydb;
+package com.ll.dydb;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +15,10 @@ public class InitData {
 
             for(long i=100; i<=110; i++) {
                 MyClass data = MyClass.builder()
-                        .id(i)
+                        .id("%d".formatted(i))
                         .createDate(LocalDateTime.now())
                         .build();
-                dynamoDBService.putItem("hello", data);
+                dynamoDBService.putItem("post", data);
             }
         };
     }
